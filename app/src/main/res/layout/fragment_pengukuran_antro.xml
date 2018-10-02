@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Boundary.Mainmenu.Antro_Pengukuran">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+            android:paddingVertical="@dimen/AP_padding_input_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Anak"/>
+            <EditText
+                android:id="@+id/ap_input_nama_anak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukkan Nama"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+            android:paddingVertical="@dimen/AP_padding_input_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
+                <Button
+                    android:id="@+id/ap_JK_lelaki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                    android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                    android:textColor="@drawable/text_color_button_statusimunisasi"
+                    android:background="@drawable/rectengle_round_button_statusimunisasi"
+                    android:text="Laki-Laki"/>
+
+                <Button
+                    android:id="@+id/ap_JK_perempuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                    android:textColor="@drawable/text_color_button_statusimunisasi"
+                    android:background="@drawable/rectengle_round_button_statusimunisasi"
+                    android:text="Perempuan"/>
+            </LinearLayout>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+            android:paddingVertical="@dimen/AP_padding_input_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Umur (Bln)"/>
+            <EditText
+                android:id="@+id/ap_input_umur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Masukkan Umur"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+            android:paddingVertical="@dimen/AP_padding_input_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Berat Badan (Kg)"/>
+            <EditText
+                android:id="@+id/ap_input_berat_badan"
+                android:layout_width="match_parent"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                android:hint="Masukkan Berat Badan"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+            android:paddingVertical="@dimen/AP_padding_input_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tinggi Badan (Cm)"/>
+            <EditText
+                android:id="@+id/ap_input_tinggi_badan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Masukkan Tinggi Badan"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+            android:paddingVertical="@dimen/AP_padding_input_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status Imunisasi"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
+                    <Button
+                        android:id="@+id/ap_button_Hbo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                        android:textColor="@drawable/text_color_button_statusimunisasi"
+                        android:background="@drawable/rectengle_round_button_statusimunisasi"
+                        android:text="HBo"/>
+
+                    <Button
+                        android:id="@+id/ap_button_polio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                        android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                        android:textColor="@drawable/text_color_button_statusimunisasi"
+                        android:background="@drawable/rectengle_round_button_statusimunisasi"
+                        android:text="BCG. Polio 1"/>
+
+                    <Button
+                        android:id="@+id/ap_button_campak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                        android:textColor="@drawable/text_color_button_statusimunisasi"
+                        android:background="@drawable/rectengle_round_button_statusimunisasi"
+                        android:text="Campak"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
+                    <Button
+                        android:id="@+id/ap_button_polio2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                        android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                        android:textColor="@drawable/text_color_button_statusimunisasi"
+                        android:background="@drawable/rectengle_round_button_statusimunisasi"
+                        android:text="DPT_HB1. Polio 2"/>
+
+                    <Button
+                        android:id="@+id/ap_button_polio3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                        android:textColor="@drawable/text_color_button_statusimunisasi"
+                        android:background="@drawable/rectengle_round_button_statusimunisasi"
+                        android:text="DPT_HB2. Polio 3"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
+                    <Button
+                        android:id="@+id/ap_button_polio4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                        android:textColor="@drawable/text_color_button_statusimunisasi"
+                        android:background="@drawable/rectengle_round_button_statusimunisasi"
+                        android:text="DPT_HB3. Polio 4"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                android:paddingVertical="@dimen/AP_padding_input_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LILA (Cm)"/>
+                <EditText
+                    android:id="@+id/ap_input_lila"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="Masukkan Lila" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                android:paddingVertical="@dimen/AP_padding_input_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hb (gr %)"/>
+                <EditText
+                    android:id="@+id/ap_input_Hb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="Masukkan Hb" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                android:paddingVertical="@dimen/AP_padding_input_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Riwayat Penyakit (6 Bulan Terakhir)"/>
+                <EditText
+                    android:id="@+id/ap_input_riwayat_penyakit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Penyakit"
+                    android:inputType="text|textMultiLine"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_hitung_antropometri"
+            android:text="Hitung Antropometri"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:background="@drawable/rectengle_round_button" />
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

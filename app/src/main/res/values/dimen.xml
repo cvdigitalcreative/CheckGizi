@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="AP_padding_input_horizontal">10dp</dimen>
+    <dimen name="AP_padding_input_vertical">6dp</dimen>
+    <dimen name="AP_marginRight_for_statusimunisasi_btn">10dp</dimen>
+    <dimen name="AP_padding_for_statusimunisasi_btn">10dp</dimen>
+    <dimen name="AP_paddinglayout_for_statusimunisasi_btn">6dp</dimen>
+</resources>

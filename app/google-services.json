@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "168110251031",
+    "firebase_url": "https://aplikasigizi.firebaseio.com",
+    "project_id": "aplikasigizi",
+    "storage_bucket": "aplikasigizi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168110251031:android:4d55081afbf047df",
+        "android_client_info": {
+          "package_name": "com.digitalcreative.aplikasigizi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168110251031-5di96js26i15o24gpcnk9u4rq6novnpe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digitalcreative.aplikasigizi",
+            "certificate_hash": "e9808507080cd380e4115c06e3314f68ab171046"
+          }
+        },
+        {
+          "client_id": "168110251031-5hosuos90lprkie9ar5kdhik1mi1k13v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeXTQTgQwThmgpdl7z662wEZzcSX9Gbu4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168110251031-5hosuos90lprkie9ar5kdhik1mi1k13v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
