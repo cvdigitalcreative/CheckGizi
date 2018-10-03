@@ -1,9 +1,18 @@
 package com.digitalcreative.aplikasigizi.Controller.Firebase;
 
+import android.support.v7.widget.CardView;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class FirebaseController {
     FirebaseAuth firebaseAuth;
@@ -22,11 +31,17 @@ public class FirebaseController {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseUser =  firebaseAuth.getCurrentUser();
-        String riwayatkey= firebaseDatabase.getReference("HasilAntro").child(firebaseUser.getUid()).push().getKey();
+
+        String riwayatkey= firebaseDatabase.getReference("Data_Kesehatan").child(firebaseUser.getUid()).push().getKey();
+
+        Long timeStamp = System.currentTimeMillis()/1000;
+        String getTS = timeStamp.toString();
+        Date calendar = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String tanggal = df.format(calendar);
 
         //SavetoFirebase
-        myRef = firebaseDatabase.getReference().child("Data_Kesehatan").child(firebaseUser.getUid()).child(riwayatkey);
-        myRef.child("date_tanggal");
+        myRef = firebaseDatabase.getReference().child("Data_Kesehatan").child(firebaseUser.getUid()).child(getTS).child(riwayatkey);
         myRef.child("detail_nama").setValue(getNama);
         myRef.child("detail_jenisKelamin").setValue(jenisKelamin);
         myRef.child("detail_tinggiBadan").setValue(tinggiBadan);
@@ -45,5 +60,29 @@ public class FirebaseController {
         myRef.child("status_Imunisasi").child("HBO_Polio3").setValue(getHBO_polio3);
         myRef.child("status_Imunisasi").child("HBO_Polio4").setValue(getHBO_polio4);
         myRef.child("status_Imunisasi").child("Campak").setValue(getCampak);
+    }
+
+    public void loadData(){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseUser =  firebaseAuth.getCurrentUser();
+        myRef = firebaseDatabase.getReference();
+
+        String user = firebaseUser.getUid();
+
+        myRef.child("Data_Kesehatan").child(user).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                    String getTime = dataSnapshot1.getKey();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

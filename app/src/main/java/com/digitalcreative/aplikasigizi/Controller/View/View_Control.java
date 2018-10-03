@@ -61,10 +61,10 @@ public class View_Control {
         } else {
             hitung_sdPerempuan =  new Hitung_SDPerempuan(umur, beratBadan, tinggiBadan);
 
-            resultBB_Umur = hitung_sdLakilaki.SD_beratBadan_per_Umur();
-            resultPB_Umur = hitung_sdLakilaki.SD_panjangBadan_per_Umur();
-            resultIMT_Umur = hitung_sdLakilaki.SD_IMT_per_Umur();
-            resultPB_BB = hitung_sdLakilaki.SD_panjangBadan_per_beratBadan();
+            resultBB_Umur = hitung_sdPerempuan.SD_beratBadan_per_Umur();
+            resultPB_Umur = hitung_sdPerempuan.SD_panjangBadan_per_Umur();
+            resultIMT_Umur = hitung_sdPerempuan.SD_IMT_per_Umur();
+            resultPB_BB = hitung_sdPerempuan.SD_panjangBadan_per_beratBadan();
 
             Bundle bundle =  new Bundle();
             bundle.putString("test", resultBB_Umur);
@@ -78,6 +78,7 @@ public class View_Control {
 
     public void saveToFirebase(){
         //get Detail
+        System.out.println("masuk sini");
         firebaseController =  new FirebaseController();
         firebaseController.savingData(umur, tinggiBadan, beratBadan, getNama, getPenyakitterakhir,
                 JenisKelamin, resultBB_Umur, resultPB_Umur, resultIMT_Umur, resultPB_BB, getLila, getHb,

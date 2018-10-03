@@ -7,10 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.digitalcreative.aplikasigizi.Controller.View.View_Control;
 import com.digitalcreative.aplikasigizi.R;
@@ -23,11 +25,12 @@ import static android.content.ContentValues.TAG;
 public class Antro_Pengukuran extends Fragment {
     View_Control view_control;
     Antro_HasilPengukuran antro_hasilPengukuran;
-    EditText namaAnak, jeniKelamin, beratBadan, tinggiBadan, penyakitTerakhir, umur, lila, hb;
+    EditText namaAnak, beratBadan, tinggiBadan, penyakitTerakhir, umur, lila, hb;
     String getnamaAnak, getjenisKelamin, getberatBadan, gettinggiBadan, getpenyakitTerakhir,
             getUmur, getLila, getHb, getHBO, getHBO_polio1, getHBO_polio2,
             getHBO_polio3, getHBO_polio4, getCampak;
     Button hitungAntro, hbo, polio1, campak, polio2, polio3, polio4, jk_lelaki, jk_Perempuan;
+    int mCounter_hbo, mCounter_polio1, mCounter_polio2, mCounter_polio3, mCounter_polio4, mCounter_campak;
 
     public Antro_Pengukuran() {
 
@@ -49,27 +52,47 @@ public class Antro_Pengukuran extends Fragment {
         hitungAntro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //do IT the data
+                //Get The Value
                 getTheValue();
-                antro_hasilPengukuran =  new Antro_HasilPengukuran();
 
-                view_control =  new View_Control(getUmur, getberatBadan, gettinggiBadan, getjenisKelamin,
-                        getnamaAnak, getpenyakitTerakhir, getLila, getHb, getHBO, getHBO_polio1, getHBO_polio2,
-                        getHBO_polio3, getHBO_polio4, getCampak);
-                view_control.getData(antro_hasilPengukuran);
-                view_control.saveToFirebase();
+                //Check Value When It's more than The limits
+                if (Integer.valueOf(getUmur) <= 24){
+                    if(Integer.valueOf(gettinggiBadan) >= 45 && Integer.valueOf(gettinggiBadan) <= 110){
+                        doitData();
+                    } else {
+                        Toast.makeText(getActivity(), "Tinggi Badan Melebihi Limit (Range 45cm - 110cm)", Toast.LENGTH_LONG).show();
+                    }
+                } else if(Integer.valueOf(getUmur) > 24 && Integer.valueOf(getUmur) <= 60){
+                    if(Integer.valueOf(gettinggiBadan) >= 65 && Integer.valueOf(gettinggiBadan) <= 120){
+                        doitData();
+                    } else {
+                        Toast.makeText(getActivity(), "Tinggi Badan Melebihi Limit (Range 65cm - 120cm)", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "Umur Melebihi Limit (Range 0 bulan - 60 bulan)", Toast.LENGTH_LONG).show();
+                }
 
-                //show The result
-                redirectfragment();
             }
         });
         return view;
     }
 
+    private void doitData() {
+        antro_hasilPengukuran =  new Antro_HasilPengukuran();
+
+        view_control =  new View_Control(getUmur, getberatBadan, gettinggiBadan, getjenisKelamin,
+                getnamaAnak, getpenyakitTerakhir, getLila, getHb, getHBO, getHBO_polio1, getHBO_polio2,
+                getHBO_polio3, getHBO_polio4, getCampak);
+        view_control.getData(antro_hasilPengukuran);
+        view_control.saveToFirebase();
+
+        //show The result
+        redirectfragment();
+    }
+
     private void getTheValue() {
         //get String Section
         getnamaAnak = namaAnak.getText().toString();
-        getjenisKelamin = jeniKelamin.getText().toString();
         getberatBadan = beratBadan.getText().toString();
         gettinggiBadan = tinggiBadan.getText().toString();
         getpenyakitTerakhir = penyakitTerakhir.getText().toString();
@@ -101,6 +124,13 @@ public class Antro_Pengukuran extends Fragment {
     }
 
     private void actionsStatImunisasi() {
+        getHBO = "Tidak";
+        getHBO_polio1 = "Tidak";
+        getHBO_polio2 = "Tidak";
+        getHBO_polio3 = "Tidak";
+        getHBO_polio4 = "Tidak";
+        getCampak = "Tidak";
+
         jk_lelaki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +140,7 @@ public class Antro_Pengukuran extends Fragment {
                 jk_lelaki.setSelected(true);
                 jk_Perempuan.setSelected(false);
 
-                getjenisKelamin = "Perempuan";
+                getjenisKelamin = "Laki-laki";
             }
         });
 
@@ -123,130 +153,115 @@ public class Antro_Pengukuran extends Fragment {
                 jk_lelaki.setSelected(false);
                 jk_Perempuan.setSelected(true);
 
-                getjenisKelamin = "Laki-laki";
+                getjenisKelamin = "Perempuan";
             }
         });
 
-            hbo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    boolean check = true;
-                    hbo.setTypeface(Typeface.DEFAULT_BOLD);
 
-                    if (!check){
-                        hbo.setSelected(!check);
-                    } else {
-                        hbo.setSelected(check);
-                    }
-                    //polio1.setSelected(false);
-//                polio2.setSelected(false);
-//                polio3.setSelected(false);
-//                polio4.setSelected(false);
-//                campak.setSelected(false);
+        hbo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCounter_hbo += 1;
+                if (mCounter_hbo % 2 == 0){
+                    hbo.setTypeface(Typeface.DEFAULT);
+                    hbo.setSelected(false);
+                    getHBO = "Tidak";
+                } else {
+                    hbo.setTypeface(Typeface.DEFAULT_BOLD);
+                    hbo.setSelected(true);
+                    getHBO = "Ya";
                 }
-            });
+            }
+        });
 
         polio1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                polio1.setTypeface(Typeface.DEFAULT_BOLD);
-                hbo.setTypeface(Typeface.DEFAULT);
-                polio2.setTypeface(Typeface.DEFAULT);
-                polio3.setTypeface(Typeface.DEFAULT);
-                polio4.setTypeface(Typeface.DEFAULT);
-                campak.setTypeface(Typeface.DEFAULT);
-
-                hbo.setSelected(false);
-                polio1.setSelected(true);
-                polio2.setSelected(false);
-                polio3.setSelected(false);
-                polio4.setSelected(false);
-                campak.setSelected(false);
+                mCounter_polio1 += 1;
+                if (mCounter_polio1 % 2 == 0){
+                    polio1.setTypeface(Typeface.DEFAULT);
+                    polio1.setSelected(false);
+                    getHBO_polio1 = "Tidak";
+                } else {
+                    polio1.setTypeface(Typeface.DEFAULT_BOLD);
+                    polio1.setSelected(true);
+                    getHBO_polio1 = "Ya";
+                }
             }
         });
 
         polio2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                polio2.setTypeface(Typeface.DEFAULT_BOLD);
-                hbo.setTypeface(Typeface.DEFAULT);
-                polio1.setTypeface(Typeface.DEFAULT);
-                polio3.setTypeface(Typeface.DEFAULT);
-                polio4.setTypeface(Typeface.DEFAULT);
-                campak.setTypeface(Typeface.DEFAULT);
-
-                hbo.setSelected(false);
-                polio1.setSelected(false);
-                polio2.setSelected(true);
-                polio3.setSelected(false);
-                polio4.setSelected(false);
-                campak.setSelected(false);
+                mCounter_polio2 += 1;
+                if (mCounter_polio2 % 2 == 0){
+                    polio2.setTypeface(Typeface.DEFAULT);
+                    polio2.setSelected(false);
+                    getHBO_polio2 = "Tidak";
+                } else {
+                    polio2.setTypeface(Typeface.DEFAULT_BOLD);
+                    polio2.setSelected(true);
+                    getHBO_polio2 = "Ya";
+                }
             }
         });
 
         polio3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                polio3.setTypeface(Typeface.DEFAULT_BOLD);
-                hbo.setTypeface(Typeface.DEFAULT);
-                polio2.setTypeface(Typeface.DEFAULT);
-                polio1.setTypeface(Typeface.DEFAULT);
-                polio4.setTypeface(Typeface.DEFAULT);
-                campak.setTypeface(Typeface.DEFAULT);
+                mCounter_polio3 += 1;
 
-                hbo.setSelected(false);
-                polio1.setSelected(false);
-                polio2.setSelected(false);
-                polio3.setSelected(true);
-                polio4.setSelected(false);
-                campak.setSelected(false);
+                if(mCounter_polio3 % 2 == 0){
+                    polio3.setTypeface(Typeface.DEFAULT);
+                    polio3.setSelected(false);
+                    getHBO_polio3 = "Tidak";
+                } else {
+                    polio3.setTypeface(Typeface.DEFAULT_BOLD);
+                    polio3.setSelected(true);
+                    getHBO_polio3 = "Ya";
+                }
             }
         });
 
         polio4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                polio4.setTypeface(Typeface.DEFAULT_BOLD);
-                hbo.setTypeface(Typeface.DEFAULT);
-                polio2.setTypeface(Typeface.DEFAULT);
-                polio3.setTypeface(Typeface.DEFAULT);
-                polio1.setTypeface(Typeface.DEFAULT);
-                campak.setTypeface(Typeface.DEFAULT);
+                mCounter_polio4 += 1;
 
-                hbo.setSelected(false);
-                polio1.setSelected(false);
-                polio2.setSelected(false);
-                polio3.setSelected(false);
-                polio4.setSelected(true);
-                campak.setSelected(false);
+                if(mCounter_polio4 % 2 == 0){
+                    polio4.setTypeface(Typeface.DEFAULT);
+                    polio4.setSelected(false);
+                    getHBO_polio4 = "Tidak";
+                } else {
+                    polio4.setTypeface(Typeface.DEFAULT_BOLD);
+                    polio4.setSelected(true);
+                    getHBO_polio4 = "Ya";
+                }
             }
         });
 
         campak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                campak.setTypeface(Typeface.DEFAULT_BOLD);
-                hbo.setTypeface(Typeface.DEFAULT);
-                polio2.setTypeface(Typeface.DEFAULT);
-                polio3.setTypeface(Typeface.DEFAULT);
-                polio1.setTypeface(Typeface.DEFAULT);
-                polio4.setTypeface(Typeface.DEFAULT);
+                mCounter_campak += 1;
 
-                hbo.setSelected(false);
-                polio1.setSelected(false);
-                polio2.setSelected(false);
-                polio3.setSelected(false);
-                polio4.setSelected(false);
-                campak.setSelected(true);
+                if(mCounter_campak % 2 == 0){
+                    campak.setTypeface(Typeface.DEFAULT);
+                    campak.setSelected(false);
+                    getCampak = "Tidak";
+                } else {
+                    campak.setTypeface(Typeface.DEFAULT_BOLD);
+                    campak.setSelected(true);
+                    getCampak = "Ya";
+                }
             }
         });
     }
 
-    public void redirectfragment() {
+    private void redirectfragment() {
         Log.d(TAG, "Redirecting to login screen.");
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.container_base, antro_hasilPengukuran)
                 .addToBackStack(null).commit();
     }
-
 }

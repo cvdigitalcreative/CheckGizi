@@ -105,7 +105,7 @@ public class LK_Data_PB_BB_24sd64 {
     }
 
     public double[] getPanjangBadan_pls1SD() {
-        panjangBadan_min1SD =  new double[]
+        panjangBadan_pls1SD =  new double[]
                 {
                         8.1, 8.2, 8.3, 8.5, 8.6, 8.7, 8.8, 9.0, 9.1, 9.2,
                         9.3, 9.5, 9.6, 9.7, 9.8, 9.9, 10.0, 10.2, 10.3, 10.4,

@@ -1,16 +1,16 @@
 package com.digitalcreative.aplikasigizi.Entity.Laki_laki;
 
 public class LK_Data_PB_BB_0sd24 {
-    double[] panjangBadan;
-    double[] panjangBadan_Median;
-    double[] panjangBadan_min1SD;
-    double[] panjangBadan_min2SD;
-    double[] panjangBadan_min3SD;
-    double[] panjangBadan_pls1SD;
-    double[] panjangBadan_pls2SD;
+    double[] panjangBadan0sd24;
+    double[] panjangBadan0sd24_Median;
+    double[] panjangBadan0sd24_min1SD;
+    double[] panjangBadan0sd24_min2SD;
+    double[] panjangBadan0sd24_min3SD;
+    double[] panjangBadan0sd24_pls1SD;
+    double[] panjangBadan0sd24_pls2SD;
 
-    public double[] getPanjangBadan() {
-        panjangBadan =  new double[]
+    public double[] getPanjangBadan0sd24() {
+        panjangBadan0sd24 =  new double[]
                 {
                         45.0, 45.5, 46.0, 46.5, 47.0, 47.5, 48.0, 48.5, 49.0, 49.5,
                         50.0, 50.5, 51.0, 51.5, 52.0, 52.5, 53.0, 53.5, 54.0, 54.5,
@@ -27,11 +27,11 @@ public class LK_Data_PB_BB_0sd24 {
                         105.0, 105.5, 106.0, 106.5, 107.0, 107.5, 108.0, 108.5, 109.0, 109.5,
                         110.0
                 };
-        return panjangBadan;
+        return panjangBadan0sd24;
     }
 
-    public double[] getPanjangBadan_Median() {
-        panjangBadan_Median =  new double[]
+    public double[] getPanjangBadan0sd24_Median() {
+        panjangBadan0sd24_Median =  new double[]
                 {
                         2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.9, 3.0, 3.1, 3.2,
                         3.3, 3.4, 3.5, 3.6, 3.8, 3.9, 4.0, 4.1, 4.3, 4.4,
@@ -49,11 +49,11 @@ public class LK_Data_PB_BB_0sd24 {
                         18.3
 
                 };
-        return panjangBadan_Median;
+        return panjangBadan0sd24_Median;
     }
 
-    public double[] getPanjangBadan_min1SD() {
-        panjangBadan_min1SD =  new double[]
+    public double[] getPanjangBadan0sd24_min1SD() {
+        panjangBadan0sd24_min1SD =  new double[]
                 {
                         2.2, 2.3, 2.4, 2.5, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0,
                         3.0, 3.1, 3.2, 3.3, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0,
@@ -70,11 +70,11 @@ public class LK_Data_PB_BB_0sd24 {
                         15.3, 15.4, 15.6, 15.7, 15.9, 16.0, 16.2, 16.3, 16.5, 16.6,
                         16.8
                 };
-        return panjangBadan_min1SD;
+        return panjangBadan0sd24_min1SD;
     }
 
-    public double[] getPanjangBadan_min2SD() {
-        panjangBadan_min2SD = new double[]
+    public double[] getPanjangBadan0sd24_min2SD() {
+        panjangBadan0sd24_min2SD = new double[]
                 {
                         2.0, 2.1, 2.2, 2.3, 2.3, 2.4, 2.5, 2.6, 2.6, 2.7,
                         2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7,
@@ -91,11 +91,11 @@ public class LK_Data_PB_BB_0sd24 {
                         14.1, 14.2, 14.4, 14.5, 14.6, 14.7, 14.9, 15.0, 15.2, 15.3,
                         15.4
                 };
-        return panjangBadan_min2SD;
+        return panjangBadan0sd24_min2SD;
     }
 
-    public double[] getPanjangBadan_min3SD() {
-        panjangBadan_min3SD  = new double[]
+    public double[] getPanjangBadan0sd24_min3SD() {
+        panjangBadan0sd24_min3SD  = new double[]
                 {
                         1.9, 1.9, 2.0, 2.1, 2.1, 2.2, 2.3, 2.3, 2.4, 2.5,
                         2.6, 2.7, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4,
@@ -112,11 +112,11 @@ public class LK_Data_PB_BB_0sd24 {
                         13.0, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 14.0, 14.1,
                         14.2
                 };
-        return panjangBadan_min3SD;
+        return panjangBadan0sd24_min3SD;
     }
 
-    public double[] getPanjangBadan_pls1SD() {
-        panjangBadan_pls1SD = new double[]
+    public double[] getPanjangBadan0sd24_pls1SD() {
+        panjangBadan0sd24_pls1SD = new double[]
                 {
                         2.7, 2.8, 2.9, 3.0, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5,
                         3.6, 3.8, 3.9, 4.0, 4.1, 4.2, 4.4, 4.5, 4.7, 4.8,
@@ -133,11 +133,11 @@ public class LK_Data_PB_BB_0sd24 {
                         18.1, 18.3, 18.5, 18.6, 18.8, 19.0, 19.2, 19.4, 19.6, 19.8,
                         20.0
                 };
-        return panjangBadan_pls1SD;
+        return panjangBadan0sd24_pls1SD;
     }
 
-    public double[] getPanjangBadan_pls2SD() {
-        panjangBadan_pls2SD =  new double[]
+    public double[] getPanjangBadan0sd24_pls2SD() {
+        panjangBadan0sd24_pls2SD =  new double[]
                 {
                         3.0, 3.1, 3.1, 3.2, 3.3, 3.4, 3.6, 3.7, 3.8, 3.9,
                         4.0, 4.1, 4.2, 4.4, 4.5, 4.6, 4.8, 4.9, 5.1, 5.3,
@@ -154,6 +154,6 @@ public class LK_Data_PB_BB_0sd24 {
                         19.8, 20.0, 20.2, 20.4, 20.6, 20.8, 21.0, 21.2, 21.4, 21.7,
                         21.9
                 };
-        return panjangBadan_pls2SD;
+        return panjangBadan0sd24_pls2SD;
     }
 }
