@@ -84,7 +84,7 @@ public class Hitung_SDLakilaki {
         double SD_IMT_per_Umur = hitung_zScore(umur, IMT, median, negativeSD_1, positiveSD_1);
         System.out.println("hasil IMT per Umur = " +SD_IMT_per_Umur);
 
-        return decision_antro.startDecision_GemukKurus(IMT);
+        return decision_antro.startDecision_GemukKurus(SD_IMT_per_Umur);
     }
 
 

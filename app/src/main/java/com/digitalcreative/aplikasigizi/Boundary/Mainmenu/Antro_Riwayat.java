@@ -2,13 +2,19 @@ package com.digitalcreative.aplikasigizi.Boundary.Mainmenu;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.digitalcreative.aplikasigizi.Controller.Adapter.Riwayat_RecyclerView;
 import com.digitalcreative.aplikasigizi.Controller.Firebase.FirebaseController;
@@ -18,8 +24,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +37,7 @@ import java.util.List;
 public class Antro_Riwayat extends Fragment {
     Riwayat_RecyclerView riwayat_recyclerView;
     FirebaseController firebaseController;
-    List<Model> list =  new ArrayList<>();
+    List<Model> list = new ArrayList<>();
     RecyclerView recyclerView;
     Context context;
 
@@ -41,19 +51,18 @@ public class Antro_Riwayat extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_riwayat_antro, container, false);
-            //Init
-            recyclerView = view.findViewById(R.id.recyle_riwayat);
+        //Init
+        recyclerView = view.findViewById(R.id.recyle_riwayat);
 
-            //Recycler
-            riwayat_recyclerView = new Riwayat_RecyclerView(list);
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        //Recycler
+        riwayat_recyclerView = new Riwayat_RecyclerView(list);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-            //Invoke Class Firebase
-            firebaseController =  new FirebaseController();
-            firebaseController.loadData();
+        //Invoke Class Firebase
+        firebaseController = new FirebaseController();
+        list = firebaseController.loadData(list, recyclerView, riwayat_recyclerView);
 
         return view;
     }
-
 }

@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#49dff9</color>
+    <color name="startColor">#4abaea</color>
+    <color name="midleColor">#49dff9</color>
+    <color name="endColor">#a5e6ef</color>
+    <color name="toolbarcolor">#ffffff</color>
+    <color name="baseColor">#fafcfd</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="AP_stroke_for_statusimunisasi_btn">#52caef</color>
+    <color name="linearlayout_color">#3cffffff</color>
+    <color name="color_primary_text">#52caef</color>
+    <color name="color_secondary_text">#e2f6fa</color>
+    <color name="font_tabColor">#000</color>
+    <color name="RED_CV">#cf6a5f</color>
+    <color name="REDDARK_CV">#934343</color>
+    <color name="GREEN_CV">#83c755</color>
+
 </resources>

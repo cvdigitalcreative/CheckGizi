@@ -1,6 +1,7 @@
 package com.digitalcreative.aplikasigizi.Boundary.Mainmenu;
 
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.digitalcreative.aplikasigizi.Controller.View.View_Control;
@@ -31,6 +34,8 @@ public class Antro_Pengukuran extends Fragment {
             getHBO_polio3, getHBO_polio4, getCampak;
     Button hitungAntro, hbo, polio1, campak, polio2, polio3, polio4, jk_lelaki, jk_Perempuan;
     int mCounter_hbo, mCounter_polio1, mCounter_polio2, mCounter_polio3, mCounter_polio4, mCounter_campak;
+    TextView judul;
+    LinearLayout linearLayout;
 
     public Antro_Pengukuran() {
 
@@ -55,15 +60,20 @@ public class Antro_Pengukuran extends Fragment {
                 //Get The Value
                 getTheValue();
 
+                //Sout
+                System.out.println("Umur : " +getUmur);
+                System.out.println("Berat Badan : " +getberatBadan);
+                System.out.println("Tinggi : " +gettinggiBadan);
+
                 //Check Value When It's more than The limits
                 if (Integer.valueOf(getUmur) <= 24){
-                    if(Integer.valueOf(gettinggiBadan) >= 45 && Integer.valueOf(gettinggiBadan) <= 110){
+                    if(Double.valueOf(gettinggiBadan) >= 45 && Double.valueOf(gettinggiBadan) <= 110){
                         doitData();
                     } else {
                         Toast.makeText(getActivity(), "Tinggi Badan Melebihi Limit (Range 45cm - 110cm)", Toast.LENGTH_LONG).show();
                     }
                 } else if(Integer.valueOf(getUmur) > 24 && Integer.valueOf(getUmur) <= 60){
-                    if(Integer.valueOf(gettinggiBadan) >= 65 && Integer.valueOf(gettinggiBadan) <= 120){
+                    if(Double.valueOf(gettinggiBadan) >= 65 && Double.valueOf(gettinggiBadan) <= 120){
                         doitData();
                     } else {
                         Toast.makeText(getActivity(), "Tinggi Badan Melebihi Limit (Range 65cm - 120cm)", Toast.LENGTH_LONG).show();
@@ -121,6 +131,7 @@ public class Antro_Pengukuran extends Fragment {
         campak = view.findViewById(R.id.ap_button_campak);
         jk_lelaki = view.findViewById(R.id.ap_JK_lelaki);
         jk_Perempuan= view.findViewById(R.id.ap_JK_perempuan);
+
     }
 
     private void actionsStatImunisasi() {
@@ -259,7 +270,7 @@ public class Antro_Pengukuran extends Fragment {
     }
 
     private void redirectfragment() {
-        Log.d(TAG, "Redirecting to login screen.");
+        Log.d(TAG, "Redirecting screen.");
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.container_base, antro_hasilPengukuran)
                 .addToBackStack(null).commit();

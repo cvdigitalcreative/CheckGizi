@@ -5,4 +5,11 @@
     <dimen name="AP_marginRight_for_statusimunisasi_btn">10dp</dimen>
     <dimen name="AP_padding_for_statusimunisasi_btn">10dp</dimen>
     <dimen name="AP_paddinglayout_for_statusimunisasi_btn">6dp</dimen>
+    <dimen name="AP_MarginBottom_Input">8dp</dimen>
+    <dimen name="Icon_size">43dp</dimen>
+    <dimen name="AH_width_height_box">90dp</dimen>
+    <dimen name="AH_width_layoutdefault">150dp</dimen>
+    <dimen name="AH_padding_title_hasil">5dp</dimen>
+    <dimen name="AIA_layoutwidth">90dp</dimen>
+    <dimen name="AIA_textsize">10pt</dimen>
 </resources>

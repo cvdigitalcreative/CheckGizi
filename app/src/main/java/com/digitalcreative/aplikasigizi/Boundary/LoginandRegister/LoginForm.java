@@ -1,6 +1,7 @@
 package com.digitalcreative.aplikasigizi.Boundary.LoginandRegister;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,8 +21,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -31,12 +30,10 @@ import static android.support.constraint.Constraints.TAG;
 public class LoginForm extends Fragment {
     FirebaseAuth firebaseAuth;
     EditText email, pass;
-    DatabaseReference mRef;
 
     public LoginForm() {
-        // Required empty public constructor
+        //Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,25 +44,25 @@ public class LoginForm extends Fragment {
         email = view.findViewById(R.id.username);
         pass = view.findViewById(R.id.password);
 
-        //Button Register
-        final Button btn_registrasi =  view.findViewById(R.id.btn_register);
-        btn_registrasi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, new RegisterForm())
-                        .addToBackStack(null).commit();
-            }
-        });
+            //Button Register
+            final Button btn_registrasi =  view.findViewById(R.id.btn_register);
+            btn_registrasi.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.container, new RegisterForm())
+                            .addToBackStack(null).commit();
+                }
+            });
 
-        //Button Login
-        final Button btn_login = view.findViewById(R.id.btn_login);
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkemail_instance();
-            }
-        });
+            //Button Login
+            final Button btn_login = view.findViewById(R.id.btn_login);
+            btn_login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    checkemail_instance();
+                }
+            });
         return  view;
     }
 

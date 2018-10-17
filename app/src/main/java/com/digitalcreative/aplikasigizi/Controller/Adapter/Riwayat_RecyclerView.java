@@ -1,5 +1,6 @@
 package com.digitalcreative.aplikasigizi.Controller.Adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.digitalcreative.aplikasigizi.Boundary.Mainmenu.Antro_Riwayat;
 import com.digitalcreative.aplikasigizi.Model.Model;
 import com.digitalcreative.aplikasigizi.R;
 
@@ -23,8 +25,7 @@ public class Riwayat_RecyclerView extends RecyclerView.Adapter<Riwayat_RecyclerV
     @Override
     public Riwayat_RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        return new ViewHolder(view);
     }
 
     @Override
@@ -35,6 +36,8 @@ public class Riwayat_RecyclerView extends RecyclerView.Adapter<Riwayat_RecyclerV
         holder.PB_Umur.setText(model.getPB_Umur());
         holder.IMT_Umur.setText(model.getIMT_Umur());
         holder.PB_BB.setText(model.getPB_BB());
+
+        System.out.println("Wee Masuk");
     }
 
     @Override
