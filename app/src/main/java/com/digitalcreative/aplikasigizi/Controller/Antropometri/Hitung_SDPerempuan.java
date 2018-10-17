@@ -73,7 +73,7 @@ public class Hitung_SDPerempuan {
         System.out.println("IMT = " +IMT);
         System.out.println("hasil IMT per Umur = " +SD_IMT_per_Umur);
 
-        return decision_antro.startDecision_GemukKurus(IMT);
+        return decision_antro.startDecision_GemukKurus(SD_IMT_per_Umur);
     }
 
 

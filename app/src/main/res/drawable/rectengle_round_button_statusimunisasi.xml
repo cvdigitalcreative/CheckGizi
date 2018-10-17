@@ -2,8 +2,11 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_selected="true">
         <shape>
-            <solid
-                android:color="@color/AP_stroke_for_statusimunisasi_btn"/>
+            <gradient
+                android:startColor="#49dff9"
+                android:centerColor="#49dff9"
+                android:endColor="#a5e6ef"
+                android:angle="0"/>
             <corners
                 android:radius="30dp" />
         </shape>
@@ -11,7 +14,7 @@
     <item>
         <shape>
             <stroke
-                android:color="@color/AP_stroke_for_statusimunisasi_btn"
+                android:color="@color/colorPrimary"
                 android:width="2dp"/>
             <corners
                 android:radius="30dp" />

@@ -14,11 +14,11 @@ import com.digitalcreative.aplikasigizi.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Homepage extends Fragment {
+public class HomeFragment extends Fragment {
     Button do_ukur_antro, riwayat_antro;
     FragmentTransaction ft;
 
-    public Homepage() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -27,8 +27,7 @@ public class Homepage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_homepage, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
         //Init
         descTheComponent(view);
 
@@ -61,5 +60,4 @@ public class Homepage extends Fragment {
         //Fragment Transition
         ft = getActivity().getSupportFragmentManager().beginTransaction();
     }
-
 }
