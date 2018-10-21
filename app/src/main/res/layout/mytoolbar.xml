@@ -1,25 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbars"
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbars"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbarcolor"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/toolbarcolor"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-            <TextView
-                android:id="@+id/text_title"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Judul"
+            android:textColor="@color/startColor"
+            android:textStyle="bold" />
+    </android.support.v7.widget.Toolbar>
+
+    <com.dd.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-10dp"
+        app:sl_cornerRadius="10dp"
+        app:sl_dx="0dp"
+        app:sl_dy="0dp"
+        app:sl_shadowColor="#43000000"
+        app:sl_shadowRadius="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/startColor"
+            android:gravity="center">
+
+            <LinearLayout
+                android:clickable="true"
+                android:id="@+id/rotation_button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Judul"
-                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-                android:layout_gravity="center_horizontal"
-                android:textColor="@color/startColor"/>
-        </android.support.v7.widget.Toolbar>
+                android:layout_height="match_parent"
+                android:rotation="0"
+                android:gravity="right|center"
+                android:paddingHorizontal="10dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ic_arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sub_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Sub Judul"
+                android:textColor="#fff"
+                android:textSize="9pt"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </com.dd.ShadowLayout>
 </android.support.design.widget.AppBarLayout>

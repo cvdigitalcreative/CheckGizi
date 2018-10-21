@@ -1,553 +1,634 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@color/baseColor"
+    android:orientation="vertical"
     tools:context=".Boundary.Mainmenu.Antro_Pengukuran">
 
-    <com.dd.ShadowLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="-10dp"
-        android:layout_marginLeft="-10dp"
-        app:sl_cornerRadius="10dp"
-        app:sl_dx="0dp"
-        app:sl_dy="0dp"
-        app:sl_shadowColor="#43000000"
-        app:sl_shadowRadius="4dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/startColor"
-            android:gravity="center">
-            <LinearLayout
-                android:paddingHorizontal="10dp"
+        android:layout_height="match_parent">
+
+            <include layout="@layout/mytoolbar" />
+
+            <!-- TODO: Update blank fragment layout -->
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="right|center">
-                <ImageView
-                    android:layout_width="35dp"
-                    android:background="@drawable/ic_arrow"
-                    android:layout_height="35dp" />
-            </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textSize="9pt"
-                android:text="Periksa Antropometri"/>
-        </RelativeLayout>
-    </com.dd.ShadowLayout>
-
-    <!-- TODO: Update blank fragment layout -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="Personal"
-                    android:textSize="9pt"
-                    android:textStyle="bold" />
-
-                <!--Devider-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1.5dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="5dp"
-                    android:background="#2f000000" />
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <LinearLayout
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+                        android:layout_marginBottom="15dp"
+                        android:scrollbars="none">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Nama Anak" />
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
 
-                            <com.dd.ShadowLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                app:sl_cornerRadius="10dp"
-                                app:sl_dx="0dp"
-                                app:sl_dy="0dp"
-                                app:sl_shadowColor="#43000000"
-                                app:sl_shadowRadius="4dp">
-
-                                <EditText
-                                    android:id="@+id/ap_input_nama_anak"
+                                <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:background="#00000000"
-                                    android:hint="nama anak anda"
-                                    android:padding="10dp" />
-                            </com.dd.ShadowLayout>
-                        </LinearLayout>
-                    </LinearLayout>
+                                    android:layout_marginLeft="20dp"
+                                    android:text="Personal"
+                                    android:textSize="9pt"
+                                    android:textStyle="bold" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+                                <!--Devider-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1.5dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="#2f000000" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Alamat" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingHorizontal="10dp">
 
-                        <com.dd.ShadowLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:sl_cornerRadius="10dp"
-                            app:sl_dx="0dp"
-                            app:sl_dy="0dp"
-                            app:sl_shadowColor="#43000000"
-                            app:sl_shadowRadius="4dp">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
 
-                            <EditText
-                                android:id="@+id/ap_alamat_nama_anak"
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="Nama Anak" />
+
+                                            <com.dd.ShadowLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                app:sl_cornerRadius="10dp"
+                                                app:sl_dx="0dp"
+                                                app:sl_dy="0dp"
+                                                app:sl_shadowColor="#43000000"
+                                                app:sl_shadowRadius="4dp">
+
+                                                <EditText
+                                                    android:id="@+id/ap_input_nama_anak"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:background="#00000000"
+                                                    android:hint="nama anak anda"
+                                                    android:padding="10dp" />
+                                            </com.dd.ShadowLayout>
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Alamat" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_alamat_nama_anak"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="alamat"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nomor Telepon" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/no_hp_nama_anak"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="nomot telepon"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Anak ke Berapa" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_anakke"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="anak ke berapa"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Dari Berapa Saudara" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_berapasaudara"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="berapa saudara"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Jenis Kelamin" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
+
+                                            <Button
+                                                android:id="@+id/ap_JK_lelaki"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                                                android:background="@drawable/rectengle_round_button_statusimunisasi"
+                                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                                                android:text="Laki-Laki"
+                                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+
+                                            <Button
+                                                android:id="@+id/ap_JK_perempuan"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/rectengle_round_button_statusimunisasi"
+                                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                                                android:text="Perempuan"
+                                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Data"
+                                    android:textSize="9pt"
+                                    android:textStyle="bold" />
+                                <!--Devider-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1.5dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="10dp"
+                                    android:background="#2f000000" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingHorizontal="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Umur (Bln)" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_input_umur"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="umur"
+                                                android:inputType="numberDecimal"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Berat Badan (Kg)" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_input_berat_badan"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="berat badan"
+                                                android:inputType="numberDecimal"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Tinggi Badan (Cm)" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_input_tinggi_badan"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="tinggi badan"
+                                                android:inputType="numberDecimal"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="15dp"
+                                    android:text="Lainnya"
+                                    android:textSize="9pt"
+                                    android:textStyle="bold" />
+                                <!--Devider-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1.5dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="10dp"
+                                    android:background="#2f000000" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                    android:orientation="vertical"
+                                    android:paddingHorizontal="@dimen/AP_padding_input_horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:text="Status Imunisasi" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
+
+                                            <Button
+                                                android:id="@+id/ap_button_Hbo"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                                                android:background="@drawable/rectengle_round_button_statusimunisasi"
+                                                android:text="HBo"
+                                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+
+                                            <Button
+                                                android:id="@+id/ap_button_polio1"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                                                android:background="@drawable/rectengle_round_button_statusimunisasi"
+                                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                                                android:text="BCG. Polio 1"
+                                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+
+                                            <Button
+                                                android:id="@+id/ap_button_campak"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                                                android:background="@drawable/rectengle_round_button_statusimunisasi"
+                                                android:text="Campak"
+                                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
+
+                                            <Button
+                                                android:id="@+id/ap_button_polio2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
+                                                android:background="@drawable/rectengle_round_button_statusimunisasi"
+                                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                                                android:text="DPT_HB1. Polio 2"
+                                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+
+                                            <Button
+                                                android:id="@+id/ap_button_polio3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/rectengle_round_button_statusimunisasi"
+                                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                                                android:text="DPT_HB2. Polio 3"
+                                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
+
+                                            <Button
+                                                android:id="@+id/ap_button_polio4"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/rectengle_round_button_statusimunisasi"
+                                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
+                                                android:text="DPT_HB3. Polio 4"
+                                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:baselineAligned="false"
+                                    android:orientation="vertical"
+                                    android:paddingHorizontal="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="LILA (Cm)" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_input_lila"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="lila"
+                                                android:inputType="numberDecimal"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Hb (gr %)" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_input_Hb"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="hb"
+                                                android:inputType="numberDecimal"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
+                                        android:orientation="vertical"
+                                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
+                                        android:paddingVertical="@dimen/AP_padding_input_vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Riwayat Penyakit (6 Bulan Terakhir)" />
+
+                                        <com.dd.ShadowLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:sl_cornerRadius="10dp"
+                                            app:sl_dx="0dp"
+                                            app:sl_dy="0dp"
+                                            app:sl_shadowColor="#43000000"
+                                            app:sl_shadowRadius="4dp">
+
+                                            <EditText
+                                                android:id="@+id/ap_input_riwayat_penyakit"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="#00000000"
+                                                android:hint="Masukkan Penyakit"
+                                                android:inputType="text|textMultiLine"
+                                                android:padding="10dp" />
+                                        </com.dd.ShadowLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#00000000"
-                                android:hint="alamat"
-                                android:padding="10dp" />
-                        </com.dd.ShadowLayout>
-                    </LinearLayout>
+                                android:padding="20dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Jenis Kelamin" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
-                            <Button
-                                android:id="@+id/ap_JK_lelaki"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
-                                android:background="@drawable/rectengle_round_button_statusimunisasi"
-                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
-                                android:text="Laki-Laki"
-                                android:textColor="@drawable/text_color_button_statusimunisasi" />
-
-                            <Button
-                                android:id="@+id/ap_JK_perempuan"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/rectengle_round_button_statusimunisasi"
-                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
-                                android:text="Perempuan"
-                                android:textColor="@drawable/text_color_button_statusimunisasi" />
+                                <Button
+                                    android:id="@+id/btn_hitung_antropometri"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/rectengle_round_button"
+                                    android:text="Hitung Antropometri"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
                         </LinearLayout>
-                    </LinearLayout>
+                    </ScrollView>
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Data"
-                    android:textSize="9pt"
-                    android:textStyle="bold" />
-                <!--Devider-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1.5dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginVertical="10dp"
-                    android:background="#2f000000" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Umur (Bln)" />
-
-                        <com.dd.ShadowLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:sl_cornerRadius="10dp"
-                            app:sl_dx="0dp"
-                            app:sl_dy="0dp"
-                            app:sl_shadowColor="#43000000"
-                            app:sl_shadowRadius="4dp">
-
-                            <EditText
-                                android:id="@+id/ap_input_umur"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="#00000000"
-                                android:hint="umur"
-                                android:inputType="numberDecimal"
-                                android:padding="10dp" />
-                        </com.dd.ShadowLayout>
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Berat Badan (Kg)" />
-
-                        <com.dd.ShadowLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:sl_cornerRadius="10dp"
-                            app:sl_dx="0dp"
-                            app:sl_dy="0dp"
-                            app:sl_shadowColor="#43000000"
-                            app:sl_shadowRadius="4dp">
-
-                            <EditText
-                                android:id="@+id/ap_input_berat_badan"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="#00000000"
-                                android:hint="berat badan"
-                                android:inputType="numberDecimal"
-                                android:padding="10dp" />
-                        </com.dd.ShadowLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Tinggi Badan (Cm)" />
-
-                        <com.dd.ShadowLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:sl_cornerRadius="10dp"
-                            app:sl_dx="0dp"
-                            app:sl_dy="0dp"
-                            app:sl_shadowColor="#43000000"
-                            app:sl_shadowRadius="4dp">
-
-                            <EditText
-                                android:id="@+id/ap_input_tinggi_badan"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="#00000000"
-                                android:hint="tinggi badan"
-                                android:inputType="numberDecimal"
-                                android:padding="10dp" />
-                        </com.dd.ShadowLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Lainnya"
-                    android:textSize="9pt"
-                    android:textStyle="bold" />
-                <!--Devider-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1.5dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginVertical="10dp"
-                    android:background="#2f000000" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="@dimen/AP_padding_input_horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingHorizontal="10dp"
-                        android:text="Status Imunisasi" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
-
-                            <Button
-                                android:id="@+id/ap_button_Hbo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
-                                android:background="@drawable/rectengle_round_button_statusimunisasi"
-                                android:text="HBo"
-                                android:textColor="@drawable/text_color_button_statusimunisasi" />
-
-                            <Button
-                                android:id="@+id/ap_button_polio1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
-                                android:background="@drawable/rectengle_round_button_statusimunisasi"
-                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
-                                android:text="BCG. Polio 1"
-                                android:textColor="@drawable/text_color_button_statusimunisasi" />
-
-                            <Button
-                                android:id="@+id/ap_button_campak"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
-                                android:background="@drawable/rectengle_round_button_statusimunisasi"
-                                android:text="Campak"
-                                android:textColor="@drawable/text_color_button_statusimunisasi" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
-
-                            <Button
-                                android:id="@+id/ap_button_polio2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/AP_marginRight_for_statusimunisasi_btn"
-                                android:background="@drawable/rectengle_round_button_statusimunisasi"
-                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
-                                android:text="DPT_HB1. Polio 2"
-                                android:textColor="@drawable/text_color_button_statusimunisasi" />
-
-                            <Button
-                                android:id="@+id/ap_button_polio3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/rectengle_round_button_statusimunisasi"
-                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
-                                android:text="DPT_HB2. Polio 3"
-                                android:textColor="@drawable/text_color_button_statusimunisasi" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="@dimen/AP_paddinglayout_for_statusimunisasi_btn">
-
-                            <Button
-                                android:id="@+id/ap_button_polio4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/rectengle_round_button_statusimunisasi"
-                                android:padding="@dimen/AP_padding_for_statusimunisasi_btn"
-                                android:text="DPT_HB3. Polio 4"
-                                android:textColor="@drawable/text_color_button_statusimunisasi" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:baselineAligned="false"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="LILA (Cm)" />
-
-                        <com.dd.ShadowLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:sl_cornerRadius="10dp"
-                            app:sl_dx="0dp"
-                            app:sl_dy="0dp"
-                            app:sl_shadowColor="#43000000"
-                            app:sl_shadowRadius="4dp">
-
-                            <EditText
-                                android:id="@+id/ap_input_lila"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="#00000000"
-                                android:hint="lila"
-                                android:inputType="numberDecimal"
-                                android:padding="10dp" />
-                        </com.dd.ShadowLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Hb (gr %)" />
-
-                        <com.dd.ShadowLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:sl_cornerRadius="10dp"
-                            app:sl_dx="0dp"
-                            app:sl_dy="0dp"
-                            app:sl_shadowColor="#43000000"
-                            app:sl_shadowRadius="4dp">
-
-                            <EditText
-                                android:id="@+id/ap_input_Hb"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="#00000000"
-                                android:hint="hb"
-                                android:inputType="numberDecimal"
-                                android:padding="10dp" />
-                        </com.dd.ShadowLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/AP_MarginBottom_Input"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="@dimen/AP_padding_input_horizontal"
-                        android:paddingVertical="@dimen/AP_padding_input_vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Riwayat Penyakit (6 Bulan Terakhir)" />
-
-                        <com.dd.ShadowLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:sl_cornerRadius="10dp"
-                            app:sl_dx="0dp"
-                            app:sl_dy="0dp"
-                            app:sl_shadowColor="#43000000"
-                            app:sl_shadowRadius="4dp">
-
-                            <EditText
-                                android:id="@+id/ap_input_riwayat_penyakit"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="#00000000"
-                                android:hint="Masukkan Penyakit"
-                                android:inputType="text|textMultiLine"
-                                android:padding="10dp" />
-                        </com.dd.ShadowLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp">
-
-                <Button
-                    android:id="@+id/btn_hitung_antropometri"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rectengle_round_button"
-                    android:text="Hitung Antropometri"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+</android.support.v4.widget.DrawerLayout>
