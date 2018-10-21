@@ -13,19 +13,23 @@ public class View_Control {
     FirebaseController firebaseController;
 
     String resultBB_Umur, resultPB_Umur, resultIMT_Umur, resultPB_BB,
-            getPenyakitterakhir, getNama, JenisKelamin, getpenyakitTerakhir,
+            getPenyakitterakhir, getNama, getalamat, getnoHp, getanake, getsaudarake,
+            JenisKelamin, getpenyakitTerakhir,
             getLila, getHb, getHBO, getHBO_polio1, getHBO_polio2,
             getHBO_polio3, getHBO_polio4, getCampak;
 
     int umur;
     double tinggiBadan, beratBadan;
 
-    public View_Control(String getUmur, String getberatBadan, String gettinggiBadan, String getjenisKelamin,
-                        String getnamaAnak, String getpenyakitTerakhir, String getLila, String getHb,
-                        String getHBO, String getHBO_polio1, String getHBO_polio2,
-                        String getHBO_polio3, String getHBO_polio4,
-                        String getCampak) {
+    public View_Control(String getUmur, String getalamat, String getnoHp, String getanake, String getsaudarake, String getberatBadan,
+                        String gettinggiBadan, String getjenisKelamin, String getnamaAnak, String getpenyakitTerakhir,
+                        String getLila, String getHb, String getHBO, String getHBO_polio1, String getHBO_polio2,
+                        String getHBO_polio3, String getHBO_polio4, String getCampak) {
         this.umur = Integer.valueOf(getUmur);
+        this.getalamat = getalamat;
+        this.getnoHp = getnoHp;
+        this.getanake = getanake;
+        this.getsaudarake = getsaudarake;
         this.beratBadan = Double.valueOf(getberatBadan);
         this.tinggiBadan = Double.valueOf(gettinggiBadan);
         this.JenisKelamin = getjenisKelamin;
@@ -108,7 +112,7 @@ public class View_Control {
         //get Detail
         System.out.println("masuk sini");
         firebaseController =  new FirebaseController();
-        firebaseController.savingData(umur, tinggiBadan, beratBadan, getNama, getPenyakitterakhir,
+        firebaseController.savingData(umur, getalamat, getnoHp, getanake, getsaudarake, tinggiBadan, beratBadan, getNama, getPenyakitterakhir,
                 JenisKelamin, resultBB_Umur, resultPB_Umur, resultIMT_Umur, resultPB_BB, getLila, getHb,
                 getHBO, getHBO_polio1, getHBO_polio2, getHBO_polio3, getHBO_polio4, getCampak);
     }

@@ -25,35 +25,37 @@ public class FirebaseController {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference myRef;
 
-    public void savingData(int umur, double tinggiBadan, double beratBadan, String getNama, String getPenyakitterakhir,
-                           String jenisKelamin, String resultBB_Umur, String resultPB_Umur,
-                           String resultIMT_Umur, String resultPB_BB, String getLila,
-                           String getHb, String getHBO, String getHBO_polio1,
-                           String getHBO_polio2, String getHBO_polio3,
-                           String getHBO_polio4,
-                           String getCampak){
+    public void savingData(int umur, String getalamat, String getnoHp, String getanake, String getsaudarake, double tinggiBadan,
+                           double beratBadan, String getNama, String getPenyakitterakhir, String jenisKelamin,
+                           String resultBB_Umur, String resultPB_Umur, String resultIMT_Umur, String resultPB_BB,
+                           String getLila, String getHb, String getHBO, String getHBO_polio1, String getHBO_polio2,
+                           String getHBO_polio3, String getHBO_polio4, String getCampak){
         //Firebase
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseUser =  firebaseAuth.getCurrentUser();
 
-        String riwayatkey= firebaseDatabase.getReference("Data_Kesehatan").child(firebaseUser.getUid()).push().getKey();
+        String riwayatkey= firebaseDatabase.getReference("Data_Kesehatan").child("1rSxvWb8lpdWsul32Br6wbFQqxD2").push().getKey();
 
         //get time using timeStamp
         Long timeStamp = System.currentTimeMillis()/1000;
         String getTS = timeStamp.toString();
 
         Date calendar = Calendar.getInstance().getTime();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM dd, yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MM yyyy");
         String df = simpleDateFormat.format(calendar);
 
 
         //SavetoFirebase
-        myRef = firebaseDatabase.getReference().child("Data_Kesehatan").child(firebaseUser.getUid()).child(df).child(riwayatkey);
+        myRef = firebaseDatabase.getReference().child("Data_Kesehatan").child("1rSxvWb8lpdWsul32Br6wbFQqxD2").child(df).child(riwayatkey);
         myRef.child("detail_nama").setValue(getNama);
         myRef.child("detail_Tanggal").setValue(getTS);
         myRef.child("detail_jenisKelamin").setValue(jenisKelamin);
         myRef.child("detail_tinggiBadan").setValue(tinggiBadan);
+        myRef.child("detail_alamat").setValue(getalamat);
+        myRef.child("detail_anakKe").setValue(getanake);
+        myRef.child("detail_dariBerapaSaudara").setValue(getsaudarake);
+        myRef.child("detail_no_telepon").setValue(getnoHp);
         myRef.child("detail_beratBadan").setValue(beratBadan);
         myRef.child("detail_Umur").setValue(umur);
         myRef.child("detail_penyakitTerakhir").setValue(getPenyakitterakhir);
@@ -77,7 +79,7 @@ public class FirebaseController {
         firebaseUser =  firebaseAuth.getCurrentUser();
         myRef = firebaseDatabase.getReference("Data_Kesehatan");
 
-        final String user = firebaseUser.getUid();
+        final String user = "1rSxvWb8lpdWsul32Br6wbFQqxD2";
 
         myRef.child(user).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

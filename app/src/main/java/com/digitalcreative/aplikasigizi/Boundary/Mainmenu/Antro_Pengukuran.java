@@ -1,14 +1,14 @@
 package com.digitalcreative.aplikasigizi.Boundary.Mainmenu;
 
 
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -28,13 +28,14 @@ import static android.content.ContentValues.TAG;
 public class Antro_Pengukuran extends Fragment {
     View_Control view_control;
     Antro_HasilPengukuran antro_hasilPengukuran;
-    EditText namaAnak, beratBadan, tinggiBadan, penyakitTerakhir, umur, lila, hb;
-    String getnamaAnak, getjenisKelamin, getberatBadan, gettinggiBadan, getpenyakitTerakhir,
-            getUmur, getLila, getHb, getHBO, getHBO_polio1, getHBO_polio2,
+    EditText namaAnak, beratBadan, tinggiBadan, penyakitTerakhir, umur, lila, hb, alamat, noHP, anake, saudarake;
+    String getnamaAnak, getjenisKelamin, getberatBadan, gettinggiBadan, getalamat, getnoHp, getanake, getsaudarake,
+            getpenyakitTerakhir, getUmur, getLila, getHb, getHBO, getHBO_polio1, getHBO_polio2,
             getHBO_polio3, getHBO_polio4, getCampak;
     Button hitungAntro, hbo, polio1, campak, polio2, polio3, polio4, jk_lelaki, jk_Perempuan;
     int mCounter_hbo, mCounter_polio1, mCounter_polio2, mCounter_polio3, mCounter_polio4, mCounter_campak;
-    TextView judul;
+    TextView judul, subjudul;
+    Toolbar toolbar;
     LinearLayout linearLayout;
 
     public Antro_Pengukuran() {
@@ -51,8 +52,19 @@ public class Antro_Pengukuran extends Fragment {
         //init
         descTheComponent(view);
 
+        //Set
+        setTheValue();
+
         //Actions
         actionsStatImunisasi();
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Antro_Riwayat antro_riwayat =  new Antro_Riwayat();
+                redirectfragment(antro_riwayat);
+
+            }
+        });
 
         hitungAntro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,17 +99,27 @@ public class Antro_Pengukuran extends Fragment {
         return view;
     }
 
+    private void setTheValue() {
+        //Toolbar
+        setHasOptionsMenu(true);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+
+        //TextView
+        judul.setText("Aplikasi Antropometri");
+        subjudul.setText("Periksa Gizi");
+    }
+
     private void doitData() {
         antro_hasilPengukuran =  new Antro_HasilPengukuran();
 
-        view_control =  new View_Control(getUmur, getberatBadan, gettinggiBadan, getjenisKelamin,
-                getnamaAnak, getpenyakitTerakhir, getLila, getHb, getHBO, getHBO_polio1, getHBO_polio2,
-                getHBO_polio3, getHBO_polio4, getCampak);
+        view_control =  new View_Control(getUmur, getalamat, getnoHp, getanake, getsaudarake, getberatBadan,
+                gettinggiBadan, getjenisKelamin, getnamaAnak, getpenyakitTerakhir, getLila, getHb, getHBO,
+                getHBO_polio1, getHBO_polio2, getHBO_polio3, getHBO_polio4, getCampak);
         view_control.getData(antro_hasilPengukuran);
         view_control.saveToFirebase();
 
         //show The result
-        redirectfragment();
+        redirectfragment(antro_hasilPengukuran);
     }
 
     private void getTheValue() {
@@ -109,11 +131,29 @@ public class Antro_Pengukuran extends Fragment {
         getUmur = umur.getText().toString();
         getLila = lila.getText().toString();
         getHb = hb.getText().toString();
+        getalamat = alamat.getText().toString();
+        getnoHp = noHP.getText().toString();
+        getanake = anake.getText().toString();
+        getsaudarake = saudarake.getText().toString();
     }
 
     private void descTheComponent(View view) {
+        //Linear Layout
+        linearLayout = view.findViewById(R.id.rotation_button);
+
+        //Textview
+        subjudul = view.findViewById(R.id.sub_title);
+        judul = view.findViewById(R.id.text_title);
+
+        //Toolbar
+        toolbar = view.findViewById(R.id.toolbars);
+
         //EditText Section
         namaAnak = view.findViewById(R.id.ap_input_nama_anak);
+        anake = view.findViewById(R.id.ap_anakke);
+        noHP = view.findViewById(R.id.no_hp_nama_anak);
+        alamat = view.findViewById(R.id.ap_alamat_nama_anak);
+        saudarake = view.findViewById(R.id.ap_berapasaudara);
         beratBadan = view.findViewById(R.id.ap_input_berat_badan);
         tinggiBadan = view.findViewById(R.id.ap_input_tinggi_badan);
         penyakitTerakhir = view.findViewById(R.id.ap_input_riwayat_penyakit);
@@ -269,10 +309,10 @@ public class Antro_Pengukuran extends Fragment {
         });
     }
 
-    private void redirectfragment() {
+    private void redirectfragment(Fragment fragment) {
         Log.d(TAG, "Redirecting screen.");
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.container_base, antro_hasilPengukuran)
+        transaction.replace(R.id.container_base, fragment)
                 .addToBackStack(null).commit();
     }
 }

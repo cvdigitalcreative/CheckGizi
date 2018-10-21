@@ -6,8 +6,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,9 +39,13 @@ import static android.content.ContentValues.TAG;
 public class Antro_Riwayat extends Fragment {
     Riwayat_RecyclerView riwayat_recyclerView;
     FirebaseController firebaseController;
+    Antro_Pengukuran antro_pengukuran;
     List<Model> list = new ArrayList<>();
     RecyclerView recyclerView;
     Context context;
+    LinearLayout linearLayout;
+    TextView judul, subjudul;
+    Toolbar toolbar;
 
     public Antro_Riwayat() {
         // Required empty public constructor
@@ -51,18 +57,74 @@ public class Antro_Riwayat extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_riwayat_antro, container, false);
-        //Init
-        recyclerView = view.findViewById(R.id.recyle_riwayat);
 
+        //Init
+        sayHelloboys(view);
+
+        //Set Value
+        talkTothem();
+
+        //Get Value
+        getFromThem();
+
+        //Actions
+        doitBoys();
+
+        return view;
+    }
+
+    private void getFromThem() {
+        //Invoke Class
+        firebaseController = new FirebaseController();
+        antro_pengukuran = new Antro_Pengukuran();
+    }
+
+    private void doitBoys() {
         //Recycler
         riwayat_recyclerView = new Riwayat_RecyclerView(list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         //Invoke Class Firebase
-        firebaseController = new FirebaseController();
         list = firebaseController.loadData(list, recyclerView, riwayat_recyclerView);
 
-        return view;
+        //callme BUtton
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.container_base, antro_pengukuran)
+                        .addToBackStack(null).commit();
+            }
+        });
+    }
+
+    private void talkTothem() {
+        //Linear Layout
+        linearLayout.setRotation(180);
+
+        //Toolbar
+        setHasOptionsMenu(true);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+
+        //TextView
+        judul.setText("Aplikasi Antropometri");
+        subjudul.setText("Riwayat Gizi");
+
+    }
+
+    private void sayHelloboys(View view) {
+        //Linear Layout
+        linearLayout = view.findViewById(R.id.rotation_button);
+
+        //Recycler View
+        recyclerView = view.findViewById(R.id.recyle_riwayat);
+
+        //Textview
+        subjudul = view.findViewById(R.id.sub_title);
+        judul = view.findViewById(R.id.text_title);
+
+        //Toolbar
+        toolbar = view.findViewById(R.id.toolbars);
     }
 }
