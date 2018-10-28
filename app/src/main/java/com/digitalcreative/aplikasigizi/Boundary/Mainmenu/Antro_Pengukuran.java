@@ -309,10 +309,11 @@ public class Antro_Pengukuran extends Fragment {
         });
     }
 
+
     private void redirectfragment(Fragment fragment) {
         Log.d(TAG, "Redirecting screen.");
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.container_base, fragment)
-                .addToBackStack(null).commit();
+                .commit();
     }
 }

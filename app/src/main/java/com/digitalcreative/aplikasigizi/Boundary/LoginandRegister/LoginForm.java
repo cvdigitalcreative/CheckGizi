@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -83,10 +84,8 @@ public class LoginForm extends Fragment {
                     Log.w(TAG, "signInWithEmail:failure", task.getException());
                     Toast.makeText(getActivity(), "Login Gagal - Silahkan Coba Lagi", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
     }
 
     private void clearfield() {

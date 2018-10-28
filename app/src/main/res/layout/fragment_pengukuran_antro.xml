@@ -162,7 +162,7 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:background="#00000000"
-                                                android:hint="nomot telepon"
+                                                android:hint="nomor telepon"
                                                 android:padding="10dp" />
                                         </com.dd.ShadowLayout>
                                     </LinearLayout>

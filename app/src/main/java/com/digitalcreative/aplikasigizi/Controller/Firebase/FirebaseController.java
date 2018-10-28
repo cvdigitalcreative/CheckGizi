@@ -2,6 +2,7 @@ package com.digitalcreative.aplikasigizi.Controller.Firebase;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.Display;
 
 import com.digitalcreative.aplikasigizi.Controller.Adapter.Riwayat_RecyclerView;
 import com.digitalcreative.aplikasigizi.Model.Model;
@@ -16,8 +17,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class FirebaseController {
     FirebaseAuth firebaseAuth;
@@ -35,7 +39,7 @@ public class FirebaseController {
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseUser =  firebaseAuth.getCurrentUser();
 
-        String riwayatkey= firebaseDatabase.getReference("Data_Kesehatan").child("1rSxvWb8lpdWsul32Br6wbFQqxD2").push().getKey();
+        String riwayatkey= firebaseDatabase.getReference("Data_Kesehatan").child(firebaseUser.getUid()).push().getKey();
 
         //get time using timeStamp
         Long timeStamp = System.currentTimeMillis()/1000;
@@ -47,7 +51,7 @@ public class FirebaseController {
 
 
         //SavetoFirebase
-        myRef = firebaseDatabase.getReference().child("Data_Kesehatan").child("1rSxvWb8lpdWsul32Br6wbFQqxD2").child(df).child(riwayatkey);
+        myRef = firebaseDatabase.getReference().child("Data_Kesehatan").child(firebaseUser.getUid()).child(df).child(riwayatkey);
         myRef.child("detail_nama").setValue(getNama);
         myRef.child("detail_Tanggal").setValue(getTS);
         myRef.child("detail_jenisKelamin").setValue(jenisKelamin);
@@ -79,59 +83,54 @@ public class FirebaseController {
         firebaseUser =  firebaseAuth.getCurrentUser();
         myRef = firebaseDatabase.getReference("Data_Kesehatan");
 
-        final String user = "1rSxvWb8lpdWsul32Br6wbFQqxD2";
+        final String user = firebaseUser.getUid();
 
         myRef.child(user).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
                         for(DataSnapshot dataSnapshot2: dataSnapshot1.getChildren()){
-                            String BB_per_Umur = null;
-                            String IMT_per_Umur = null;
-                            String PB_per_Umur = null;
-                            String PB_per_BB = null;
-                            String campak = null;
-                            String HBO = null;
-                            String HBO_Polio1 = null;
-                            String HBO_Polio2 = null;
-                            String HBO_Polio3 = null;
-                            String HBO_Polio4 = null;
-
-//                            for (DataSnapshot dataSnapshot3: dataSnapshot2.getChildren()){
-//                                BB_per_Umur = dataSnapshot3.child("BB_per_Umur").getValue().toString();
-//                                IMT_per_Umur = dataSnapshot3.child("IMT_per_Umur").getValue().toString();
-//                                PB_per_Umur = dataSnapshot3.child("PB_per_Umur").getValue().toString();
-//                                PB_per_BB = dataSnapshot3.child("PB_per_BB").getValue().toString();
-//                            }
-//
-//                            for (DataSnapshot dataSnapshot4: dataSnapshot2.getChildren()){
-//                                campak = dataSnapshot4.child("Campak").getValue().toString();
-//                                HBO = dataSnapshot4.child("HBO").getValue().toString();
-//                                HBO_Polio1 = dataSnapshot4.child("HBO_Polio1").getValue().toString();
-//                                HBO_Polio2 = dataSnapshot4.child("HBO_Polio2").getValue().toString();
-//                                HBO_Polio3 = dataSnapshot4.child("HBO_Polio3").getValue().toString();
-//                                HBO_Polio4 = dataSnapshot4.child("HBO_Polio4").getValue().toString();
-//                            }
-
-
-                                Model model = new Model();
+                           Model model = new Model();
                                 String nama = dataSnapshot2.child("detail_nama").getValue().toString();
                                 String umur = dataSnapshot2.child("detail_Umur").getValue().toString();
                                 String beratBadan = dataSnapshot2.child("detail_beratBadan").getValue().toString();
                                 String panjangBadan = dataSnapshot2.child("detail_tinggiBadan").getValue().toString();
                                 String jenisKelamin = dataSnapshot2.child("detail_jenisKelamin").getValue().toString();
-                                String tanggal = dataSnapshot2.child("detail_Tanggal").getValue().toString();
                                 String Hb = dataSnapshot2.child("detail_Hb").getValue().toString();
                                 String Lila = dataSnapshot2.child("detail_Lila").getValue().toString();
-                                System.out.println("nama = " +nama);
+                                long milliseconds = Long.parseLong(dataSnapshot2.child("detail_Tanggal").getValue().toString());
+                                String anakke = dataSnapshot2.child("detail_anakKe").getValue().toString();
+                                String saudarake = dataSnapshot2.child("detail_dariBerapaSaudara").getValue().toString();
+                                String notel = dataSnapshot2.child("detail_no_telepon").getValue().toString();
+                                String alamat = dataSnapshot2.child("detail_alamat").getValue().toString();
+                                String HBO = dataSnapshot2.child("status_ImunisasiHBO").getValue().toString();
+                                String HBO_Polio1 = dataSnapshot2.child("status_ImunisasiHBO_Polio1").getValue().toString();
+                                String HBO_Polio2 = dataSnapshot2.child("status_ImunisasiHBO_Polio2").getValue().toString();
+                                String HBO_Polio3 = dataSnapshot2.child("status_ImunisasiHBO_Polio3").getValue().toString();
+                                String HBO_Polio4 = dataSnapshot2.child("status_ImunisasiHBO_Polio4").getValue().toString();
+                                String campak = dataSnapshot2.child("status_ImunisasiCampak").getValue().toString();
+                                String BB_per_Umur = dataSnapshot2.child("status_gizi_BB_per_Umur").getValue().toString();;
+                                String IMT_per_Umur = dataSnapshot2.child("status_gizi_IMT_per_Umur").getValue().toString();;
+                                String PB_per_Umur = dataSnapshot2.child("status_gizi_PB_per_Umur").getValue().toString();;
+                                String PB_per_BB = dataSnapshot2.child("status_gizi_PB_per_BB").getValue().toString();;
 
+                                Date date = new Date();
+                                date.setTime(milliseconds*1000);
+                                String tanggal = new SimpleDateFormat("dd").format(date);
+                                String bulan = generateMonth(Integer.valueOf(new SimpleDateFormat("MM").format(date)));
 
+                                model.setMilisecs(String.valueOf(milliseconds));
+                                model.setAnakke(anakke);
+                                model.setAlamat(alamat);
+                                model.setSaudarake(saudarake);
+                                model.setNotel(notel);
                                 model.setNama(nama);
                                 model.setUmur(umur);
                                 model.setBeratBadan(beratBadan);
                                 model.setPanjangBadan(panjangBadan);
                                 model.setJenisKelamin(jenisKelamin);
                                 model.setTanggal(tanggal);
+                                model.setBulan(bulan);
                                 model.setHb(Hb);
                                 model.setLila(Lila);
                                 model.setBB_Umur(BB_per_Umur);
@@ -146,11 +145,10 @@ public class FirebaseController {
                                 model.setStatus_Polio4(HBO_Polio4);
                                 list.add(model);
 
+                                Collections.sort(list, Model.BY_ASC);
+                                Collections.reverse(list);
                                 recyclerView.setAdapter(riwayat_recyclerView);
-
-                           // }
                         }
-
                     }
                 }
 
@@ -161,5 +159,51 @@ public class FirebaseController {
             }
         });
     return list;
+    }
+
+    private String generateMonth(int month) {
+        String hasil = null;
+        switch (month) {
+            case 1:
+                hasil = "Jan";
+                break;
+            case 2:
+                hasil = "Feb";
+                break;
+            case 3:
+                hasil = "Mar";
+                break;
+            case 4:
+                hasil = "Apr";
+                break;
+            case 5:
+                hasil = "Mei";
+                break;
+            case 6:
+                hasil = "Jun";
+                break;
+            case 7:
+                hasil = "Jul";
+                break;
+            case 8:
+                hasil = "Ags";
+                break;
+            case 9:
+                hasil = "Sep";
+                break;
+            case 10:
+                hasil = "Okt";
+                break;
+            case 11:
+                hasil = "Nov";
+                break;
+            case 12:
+                hasil = "Des";
+                break;
+            default:
+                System.out.println("Hari Tidak Ditemukan");
+                break;
+        }
+        return hasil;
     }
 }

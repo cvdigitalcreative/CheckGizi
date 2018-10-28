@@ -1,8 +1,16 @@
 package com.digitalcreative.aplikasigizi.Model;
 
+import java.util.Comparator;
+
 public class Model {
+    String milisecs;
     String nama;
+    String alamat;
+    String anakke;
+    String saudarake;
+    String notel;
     String tanggal;
+    String bulan;
     String Umur;
     String jenisKelamin;
     String beratBadan;;
@@ -20,12 +28,64 @@ public class Model {
     String IMT_Umur;
     String PB_BB;
 
+    public static final Comparator<Model> BY_ASC =  new Comparator<Model>() {
+        @Override
+        public int compare(Model o1, Model o2) {
+
+            return o1.milisecs.compareTo(o2.milisecs);
+        }
+    };
+
+    public void setMilisecs(String milisecs) {
+        this.milisecs = milisecs;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getAnakke() {
+        return anakke;
+    }
+
+    public void setAnakke(String anakke) {
+        this.anakke = anakke;
+    }
+
+    public String getSaudarake() {
+        return saudarake;
+    }
+
+    public void setSaudarake(String saudarake) {
+        this.saudarake = saudarake;
+    }
+
+    public String getNotel() {
+        return notel;
+    }
+
+    public void setNotel(String notel) {
+        this.notel = notel;
+    }
+
     public String getNama() {
         return nama;
     }
 
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    public String getBulan() {
+        return bulan;
+    }
+
+    public void setBulan(String bulan) {
+        this.bulan = bulan;
     }
 
     public String getTanggal() {

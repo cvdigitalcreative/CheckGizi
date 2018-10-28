@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -43,12 +44,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:gravity="center"
-                    android:padding="10dp"
+                    android:padding="7dp"
                     android:text="Informasi Anak"
                     android:textColor="#0e444d"
-                    android:textSize="14pt" />
+                    android:textSize="13pt" />
             </LinearLayout>
 
             <LinearLayout
@@ -60,10 +61,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginHorizontal="30dp"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/rectangle_round2"
                     android:orientation="vertical"
-                    android:padding="20dp"
+                    android:padding="13dp"
                     android:paddingTop="6dp">
 
                     <LinearLayout
@@ -82,259 +84,458 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="@dimen/AH_padding_title_hasil">
+                                android:layout_marginHorizontal="@dimen/informasi_margin_allround"
+                                android:orientation="horizontal">
 
                                 <LinearLayout
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                    android:orientation="vertical"
+                                    android:padding="5dp">
 
-                                    <TextView
-                                        android:layout_width="@dimen/AIA_layoutwidth"
-                                        android:layout_height="wrap_content"
-                                        android:text="Nama " />
-
-                                    <TextView
-                                        android:id="@+id/nama_informasi"
+                                    <LinearLayout
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:textAllCaps="true"
-                                        android:textSize="@dimen/AIA_textsize" />
-                                </LinearLayout>
+                                        android:orientation="vertical">
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                        <TextView
+                                            android:id="@+id/nama_informasi"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textAllCaps="true"
+                                            android:textSize="@dimen/AIA_textsize" />
+                                    </LinearLayout>
 
-                                    <TextView
-                                        android:layout_width="@dimen/AIA_layoutwidth"
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Jenis Kelamin " />
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Anak ke - "
+                                            android:textSize="@dimen/AIA_textsize2" />
+
+                                        <TextView
+                                            android:id="@+id/anakke_informasi"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="@dimen/AIA_textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" dari "
+                                            android:textSize="@dimen/AIA_textsize2" />
+
+                                        <TextView
+                                            android:id="@+id/saudarake_informasi"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="@dimen/AIA_textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Saudara "
+                                            android:textSize="@dimen/AIA_textsize2" />
+                                    </LinearLayout>
 
                                     <TextView
                                         android:id="@+id/jeniskelamin_informasi"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:textSize="@dimen/AIA_textsize" />
+                                        android:textSize="@dimen/AIA_textsize2" />
                                 </LinearLayout>
                             </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/informasi_margin_allround"
+                                android:layout_marginVertical="2dp"
+                                android:background="#1d000000" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/informasi_margin_allround"
+                                android:orientation="vertical"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:id="@+id/notel_informasi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/AIA_textsize2" />
+
+                                <TextView
+                                    android:id="@+id/alamat_informasi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/AIA_textsize2" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginHorizontal="@dimen/informasi_margin_allround"
+                                android:layout_marginVertical="7dp"
+                                android:background="#1d000000" />
+
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="@dimen/AH_padding_title_hasil">
+                                android:orientation="vertical">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="@dimen/AIA_layoutwidth"
-                                        android:layout_height="wrap_content"
-                                        android:text="Umur " />
-
-                                    <TextView
-                                        android:id="@+id/umur_informasi"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textAllCaps="true"
-                                        android:textSize="@dimen/AIA_textsize"
-                                        android:textStyle="normal" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="@dimen/AIA_layoutwidth"
-                                        android:layout_height="wrap_content"
-                                        android:text="Berat Badan " />
-
-                                    <TextView
-                                        android:id="@+id/bb_informasi"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textAllCaps="true"
-                                        android:textSize="@dimen/AIA_textsize"
-                                        android:textStyle="normal" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="@dimen/AIA_layoutwidth"
-                                        android:layout_height="wrap_content"
-                                        android:text="Panjang Badan " />
-
-                                    <TextView
-                                        android:id="@+id/pb_informasi"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textAllCaps="true"
-                                        android:textSize="@dimen/AIA_textsize"
-                                        android:textStyle="normal" />
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Status Imunisasi" />
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-                                        <TextView
-                                            android:layout_width="@dimen/AIA_layoutwidth"
-                                            android:layout_height="wrap_content"
-                                            android:text="HBO :" />
-
-                                        <TextView
-                                            android:id="@+id/HBO_informasi"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textSize="@dimen/AIA_textsize"
-                                            android:textStyle="normal" />
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="BCG.POLIO 1 :" />
-
-                                        <TextView
-                                            android:id="@+id/polio1_informasi"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textSize="@dimen/AIA_textsize"
-                                            android:textStyle="normal" />
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="DPT_BH1.POLIO 2 :" />
-
-                                        <TextView
-                                            android:id="@+id/polio2_informasi"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textSize="@dimen/AIA_textsize"
-                                            android:textStyle="normal" />
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="DPT_BH2.POLIO 3 :" />
-
-                                        <TextView
-                                            android:id="@+id/polio3_informasi"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textSize="@dimen/AIA_textsize"
-                                            android:textStyle="normal" />
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="DPT_BH3.POLIO 4 :" />
-
-                                        <TextView
-                                            android:id="@+id/polio4_informasi"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textSize="@dimen/AIA_textsize"
-                                            android:textStyle="normal" />
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="CAMPAK :" />
-
-                                        <TextView
-                                            android:id="@+id/campak_informasi"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textSize="@dimen/AIA_textsize"
-                                            android:textStyle="normal" />
-                                    </LinearLayout>
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical"
-                                    android:padding="@dimen/AH_padding_title_hasil">
+                                    android:layout_marginHorizontal="@dimen/informasi_margin_allround">
 
                                     <LinearLayout
-                                        android:layout_width="match_parent"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical">
+                                        android:layout_marginRight="@dimen/informasi_marginHorizontal_umurBBPB"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
 
                                         <TextView
-                                            android:layout_width="100dp"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Lila " />
+                                            android:text="Umur"
+                                            android:textSize="@dimen/AIA_textsize3" />
 
                                         <TextView
-                                            android:id="@+id/lila_informasi"
+                                            android:id="@+id/umur_informasi"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:textAllCaps="true"
                                             android:textSize="@dimen/AIA_textsize"
-                                            android:textStyle="normal" />
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Bulan"
+                                            android:textSize="@dimen/AIA_textsize3" />
                                     </LinearLayout>
 
                                     <LinearLayout
-                                        android:layout_width="match_parent"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:orientation="vertical">
+                                        android:layout_marginHorizontal="@dimen/informasi_marginHorizontal_umurBBPB"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
 
                                         <TextView
-                                            android:layout_width="100dp"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="HB " />
+                                            android:text="Tinggi"
+                                            android:textSize="@dimen/AIA_textsize3" />
 
                                         <TextView
-                                            android:id="@+id/HB_informasi"
+                                            android:id="@+id/pb_informasi"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:textAllCaps="true"
                                             android:textSize="@dimen/AIA_textsize"
-                                            android:textStyle="normal" />
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Centimeter"
+                                            android:textSize="@dimen/AIA_textsize3" />
                                     </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="@dimen/informasi_marginHorizontal_umurBBPB"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:padding="5dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Berat"
+                                            android:textSize="@dimen/AIA_textsize3" />
+
+                                        <TextView
+                                            android:id="@+id/bb_informasi"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textAllCaps="true"
+                                            android:textSize="@dimen/AIA_textsize"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Kilogram"
+                                            android:textSize="@dimen/AIA_textsize3" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginHorizontal="@dimen/informasi_margin_allround"
+                                    android:layout_marginVertical="7dp"
+                                    android:background="#1d000000" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/informasi_margin_allround"
+                                    android:orientation="vertical">
+
+
+                                    <TableLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <TableRow
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="@dimen/informasi_margin_statusimunisasi">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:text="HBO" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:layout_marginHorizontal="5dp"
+                                                android:text="  :  " />
+
+                                            <TextView
+                                                android:id="@+id/HBO_informasi"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:textStyle="normal" />
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="@dimen/informasi_margin_statusimunisasi">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:text="BCG.POLIO 1" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:layout_marginHorizontal="5dp"
+                                                android:text="  :  " />
+
+                                            <TextView
+                                                android:id="@+id/polio1_informasi"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:textStyle="normal" />
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="@dimen/informasi_margin_statusimunisasi">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:text="BCG.POLIO 2" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:layout_marginHorizontal="5dp"
+                                                android:text="  :  " />
+
+                                            <TextView
+                                                android:id="@+id/polio2_informasi"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:textStyle="normal" />
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="@dimen/informasi_margin_statusimunisasi">
+                                            >
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:text="BCG.POLIO 3" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:layout_marginHorizontal="5dp"
+                                                android:text="  :  " />
+
+                                            <TextView
+                                                android:id="@+id/polio3_informasi"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:textStyle="normal" />
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="@dimen/informasi_margin_statusimunisasi">
+                                            >
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:text="BCG.POLIO 1" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:layout_marginHorizontal="5dp"
+                                                android:text="  :  " />
+
+                                            <TextView
+                                                android:id="@+id/polio4_informasi"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:textStyle="normal" />
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="@dimen/informasi_margin_statusimunisasi">
+                                            >
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:text="Campak" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:layout_marginHorizontal="5dp"
+                                                android:text="  :  " />
+
+                                            <TextView
+                                                android:id="@+id/campak_informasi"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:textStyle="normal" />
+                                        </TableRow>
+                                    </TableLayout>
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginHorizontal="@dimen/informasi_margin_allround"
+                                    android:layout_marginVertical="7dp"
+                                    android:background="#1d000000" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/informasi_margin_allround"
+                                    android:orientation="vertical">
+
+                                    <TableLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <TableRow
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="@dimen/informasi_margin_statusimunisasi">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:text="Lila" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:layout_marginHorizontal="5dp"
+                                                android:text="  :  " />
+
+                                            <TextView
+                                                android:id="@+id/lila_informasi"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:textStyle="bold" />
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="@dimen/informasi_margin_statusimunisasi">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:text="Hb" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="left"
+                                                android:layout_marginHorizontal="5dp"
+                                                android:text="  :  " />
+
+                                            <TextView
+                                                android:id="@+id/HB_informasi"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:textStyle="bold" />
+                                        </TableRow>
+                                    </TableLayout>
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -342,7 +543,7 @@
                                         android:orientation="vertical">
 
                                         <TextView
-                                            android:layout_width="@dimen/AIA_layoutwidth"
+                                            android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="Riwayat Penyakit " />
 
@@ -355,7 +556,6 @@
                                     </LinearLayout>
                                 </LinearLayout>
                             </LinearLayout>
-
                         </LinearLayout>
 
                     </LinearLayout>
@@ -373,9 +573,9 @@
                             android:background="@drawable/rectengle_round_button"
                             android:clickable="true"
                             android:orientation="horizontal"
+                            android:paddingVertical="3dp"
                             android:paddingLeft="20dp"
-                            android:paddingRight="30dp"
-                            android:paddingVertical="3dp">
+                            android:paddingRight="30dp">
 
                             <ImageView
                                 android:layout_width="35dp"
@@ -400,6 +600,7 @@
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
 
                 <RelativeLayout
                     android:layout_width="wrap_content"

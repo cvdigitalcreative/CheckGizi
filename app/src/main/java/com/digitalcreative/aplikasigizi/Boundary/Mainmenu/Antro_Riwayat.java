@@ -94,7 +94,8 @@ public class Antro_Riwayat extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.container_base, antro_pengukuran)
-                        .addToBackStack(null).commit();
+                        .addToBackStack(HomeFragment.class.getSimpleName())
+                        .commit();
             }
         });
     }
@@ -127,4 +128,5 @@ public class Antro_Riwayat extends Fragment {
         //Toolbar
         toolbar = view.findViewById(R.id.toolbars);
     }
+
 }
