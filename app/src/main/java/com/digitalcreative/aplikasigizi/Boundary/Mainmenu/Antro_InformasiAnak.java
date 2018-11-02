@@ -17,9 +17,9 @@ import com.digitalcreative.aplikasigizi.R;
  */
 public class Antro_InformasiAnak extends Fragment {
     TextView IAI_nama, IAI_JK, IAI_umur, IAI_BB, IAI_PB, IAI_lila, IAI_HB, IAI_Riwayat, IAI_getHBO, IAI_getHBO_polio1, IAI_getHBO_polio2,
-            IAI_getHBO_polio3, IAI_getHBO_polio4, IAI_getCampak;
+            IAI_getHBO_polio3, IAI_getHBO_polio4, IAI_getCampak, IAI_alamat, IAI_notel, IAI_anake, IAI_saudarake;
     String BB_Umur, PB_Umur, IMT_umur, PB_BB, getnamaAnak, getjenisKelamin, getUmur, getberatBadan, gettinggiBadan,
-            getLila, getHb, getpenyakitTerakhir, getHBO, getHBO_polio1, getHBO_polio2,
+            getLila, getHb, getpenyakitTerakhir, getHBO, getHBO_polio1, getHBO_polio2, getanake, getsaudarake, getalamat, getnotel,
             getHBO_polio3, getHBO_polio4, getCampak;
     LinearLayout goto_homepage, pemeriksaanak;
     FragmentTransaction ft;
@@ -84,6 +84,10 @@ public class Antro_InformasiAnak extends Fragment {
         getLila = getArguments().getString("lila");
         getHb = getArguments().getString("HB");
         getpenyakitTerakhir = getArguments().getString("penyakitTerakhir");
+        getalamat = getArguments().getString("alamat");
+        getanake = getArguments().getString("anakke");
+        getsaudarake = getArguments().getString("saudarake");
+        getnotel = getArguments().getString("notel");
     }
 
     private void sendThedata() {
@@ -106,6 +110,10 @@ public class Antro_InformasiAnak extends Fragment {
         bundle.putString("lila", getLila);
         bundle.putString("HB", getHb);
         bundle.putString("penyakitTerakhir", getpenyakitTerakhir);
+        bundle.putString("alamat", getalamat);
+        bundle.putString("notel", getnotel);
+        bundle.putString("anakke", getanake);
+        bundle.putString("saudarake", getsaudarake);
         antro_hasilPengukuran.setArguments(bundle);
     }
 
@@ -125,6 +133,10 @@ public class Antro_InformasiAnak extends Fragment {
         IAI_lila.setText(getLila);
         IAI_HB.setText(getHb);
         IAI_Riwayat.setText(getpenyakitTerakhir);
+        IAI_anake.setText(getanake);
+        IAI_saudarake.setText(getsaudarake);
+        IAI_alamat.setText(getalamat);
+        IAI_notel.setText(getnotel);
     }
 
 
@@ -152,6 +164,10 @@ public class Antro_InformasiAnak extends Fragment {
         IAI_getHBO_polio3 = view.findViewById(R.id.polio3_informasi);
         IAI_getHBO_polio4 = view.findViewById(R.id.polio4_informasi);
         IAI_getCampak = view.findViewById(R.id.campak_informasi);
+        IAI_anake = view.findViewById(R.id.anakke_informasi);
+        IAI_alamat = view.findViewById(R.id.alamat_informasi);
+        IAI_saudarake = view.findViewById(R.id.saudarake_informasi);
+        IAI_notel = view.findViewById(R.id.notel_informasi);
 
     }
 

@@ -8,10 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.digitalcreative.aplikasigizi.Boundary.Mainmenu.HomeFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class BaseActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView title;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +23,6 @@ public class BaseActivity extends AppCompatActivity {
         //Init
         descTheComponent();
 
-        //Actions
-//        title.setText("Aplikasi Gizi");
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         Fragment fragment = new HomeFragment();
         FragmentTransaction fragmentTransaction =  getSupportFragmentManager().beginTransaction();
@@ -34,6 +32,7 @@ public class BaseActivity extends AppCompatActivity {
 
     private void descTheComponent() {
         //Describe Component
+        firebaseAuth = FirebaseAuth.getInstance();
         toolbar = findViewById(R.id.toolbars);
         title = findViewById(R.id.text_title);
     }

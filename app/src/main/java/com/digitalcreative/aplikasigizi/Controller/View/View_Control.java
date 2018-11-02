@@ -74,6 +74,10 @@ public class View_Control {
             bundle.putString("lila", getLila);
             bundle.putString("HB", getHb);
             bundle.putString("penyakitTerakhir", getpenyakitTerakhir);
+            bundle.putString("alamat", getalamat);
+            bundle.putString("notel", getnoHp);
+            bundle.putString("anakke", getanake);
+            bundle.putString("saudarake", getsaudarake);
             antro_hasilPengukuran.setArguments(bundle);
 
         } else {
@@ -103,7 +107,10 @@ public class View_Control {
             bundle.putString("lila", getLila);
             bundle.putString("HB", getHb);
             bundle.putString("penyakitTerakhir", getpenyakitTerakhir);
-
+            bundle.putString("alamat", getalamat);
+            bundle.putString("notel", getnoHp);
+            bundle.putString("anakke", getanake);
+            bundle.putString("saudarake", getsaudarake);
             antro_hasilPengukuran.setArguments(bundle);
         }
     }

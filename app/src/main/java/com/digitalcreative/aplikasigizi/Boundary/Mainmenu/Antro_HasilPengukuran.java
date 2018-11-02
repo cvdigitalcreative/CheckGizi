@@ -28,7 +28,7 @@ public class Antro_HasilPengukuran extends Fragment {
     TextView tindakan_1, tindakan_2, tindakan_3, tindakan_4;
     String BB_Umur, PB_Umur, IMT_umur, PB_BB, getnamaAnak, getjenisKelamin, getUmur, getberatBadan, gettinggiBadan,
             getLila, getHb, getpenyakitTerakhir, getHBO, getHBO_polio1, getHBO_polio2,
-            getHBO_polio3, getHBO_polio4, getCampak;
+            getHBO_polio3, getHBO_polio4, getCampak, getanake, getsaudarake, getalamat, getnotel;
 
     public Antro_HasilPengukuran() {
         //Required empty public constructor
@@ -89,6 +89,10 @@ public class Antro_HasilPengukuran extends Fragment {
         bundle.putString("lila", getLila);
         bundle.putString("HB", getHb);
         bundle.putString("penyakitTerakhir", getpenyakitTerakhir);
+        bundle.putString("alamat", getalamat);
+        bundle.putString("notel", getnotel);
+        bundle.putString("anakke", getanake);
+        bundle.putString("saudarake", getsaudarake);
         antro_informasiAnak.setArguments(bundle);
     }
 
@@ -111,6 +115,10 @@ public class Antro_HasilPengukuran extends Fragment {
         getLila = getArguments().getString("lila");
         getHb = getArguments().getString("HB");
         getpenyakitTerakhir = getArguments().getString("penyakitTerakhir");
+        getalamat = getArguments().getString("alamat");
+        getanake = getArguments().getString("anakke");
+        getsaudarake = getArguments().getString("saudarake");
+        getnotel = getArguments().getString("notel");
     }
 
     private void showtheResult() {
@@ -122,9 +130,6 @@ public class Antro_HasilPengukuran extends Fragment {
         tindakan_2.setText(PB_Umur);
         tindakan_3.setText(IMT_umur);
         tindakan_4.setText(PB_BB);
-
-
-
     }
 
     private void paintingCardview() {
